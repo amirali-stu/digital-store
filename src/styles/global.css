@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/* ===== Scrollbar (Chrome, Edge, Safari) ===== */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #007af4;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #69bcf4;
+}
+
+/* 🚫 حذف فلش‌های بالا / پایین */
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+@theme {
+  --color-primary: #69bcf4;
+  --color-secondary: #007af4;
+  --color-accent: #002ee8;
+  --color-Neutral-800: #303030;
+  --color-Neutral-100: #dedede;
+  --color-Neutral-700: #bababa;
+  --color-menu: #001f5e;
+  --color-light-bg: #dcebf4;
+  --color-white: #ffffff;
+  --color-white-text: #ffffff;
+  --color-fixed-bg: #ffffff;
+  --color-Neutral-50: #f6f6f6;
+}
+
+@font-face {
+  font-family: "yekan-medium";
+  src: url("fonts/YekanBakh/YekanBakh-Medium.ttf");
+}
+
+@layer components {
+  .container {
+    @apply max-w-full h-screen flex flex-col items-center;
+  }
+  .second-container {
+    @apply !px-20;
+  }
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+}
+
+body {
+  font-family: "yekan-medium";
+}
