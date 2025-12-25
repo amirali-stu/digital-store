@@ -1,7 +1,7 @@
 export default function SuggestedCategory() {
   return (
     <section className="second-container w-full mb-40">
-      <div className="w-full flex items-center gap-x-4">
+      <div data-aos="fade-down" className="w-full flex items-center gap-x-4">
         <div className="flex-1">
           <img
             src="images/suggested-category/banner2.png"

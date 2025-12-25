@@ -10,6 +10,7 @@ export default function TopHeader() {
     <div className="second-container flex items-center justify-between py-4 border-b border-Neutral-100/50">
       <div className="flex items-center gap-x-4">
         <button
+          data-aos="fade-left"
           className="bg-[#69BCF4] font-semibold text-lg
          text-white flex items-center gap-x-1 p-2 rounded-xl cursor-pointer"
         >
@@ -17,6 +18,7 @@ export default function TopHeader() {
           اولترا مارکت
         </button>
         <div
+          data-aos="fade-left"
           className={`border h-10 w-96 p-3 border-Neutral-100 rounded-xl bg-Neutral-50 flex items-center gap-x-2 transition-all duration-300 ${
             focusOnSearchInput
               ? "bg-white shadow-[0px_0px_15px] shadow-blue-300"
@@ -35,10 +37,10 @@ export default function TopHeader() {
         </div>
       </div>
       <div className="flex items-center gap-x-4">
-        <div className="p-2 border border-Neutral-100 text-blue-400 flex-center rounded-xl text-xl">
+        <div data-aos="fade-right" className="p-2 border border-Neutral-100 text-blue-400 flex-center rounded-xl text-xl">
           <TbShoppingCart />
         </div>
-        <a href="#">
+        <a data-aos="fade-right" href="#">
           <div className="py-2 px-4 border cursor-pointer rounded-xl border-Neutral-100 text-Neutral-800 flex-center gap-x-2">
             <span>ورود / ثبت نام</span>
             <LuLogIn className="rotate-180" />

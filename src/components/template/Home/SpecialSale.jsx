@@ -3,7 +3,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 function SpecialSale() {
   return (
     <section className="mb-40 second-container w-full">
-      <div className="bg-white h-[448px] shadow-[0px_0px_15px] shadow-black/5 rounded-xl p-6 flex items-center justify-between">
+      <div data-aos="flip-down" className="bg-white h-[448px] shadow-[0px_0px_15px] shadow-black/5 rounded-xl p-6 flex items-center justify-between">
         {/* details */}
         <div className="flex-1 h-full flex items-center gap-x-4">
           {/* pageination btns */}

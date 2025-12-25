@@ -72,7 +72,7 @@
     @apply max-w-full flex flex-col items-center;
   }
   .second-container {
-    @apply !px-20;
+    @apply !px-10;
   }
   .flex-center {
     @apply flex items-center justify-center;

@@ -1,17 +1,18 @@
-import { BsBasket } from "react-icons/bs";
+import { MdOutlineMovieFilter } from "react-icons/md";
 import { IoIosArrowBack } from "react-icons/io";
 import LatestProductTemplate from "./LatestProductTemplate";
+import TVItem from "./TVItem";
 
-export default function LatestProductContainer() {
+export default function TVContainer() {
   return (
     <section className="mb-40 second-container w-full">
       {/* header */}
       <div className="w-full flex items-center justify-between">
         <div data-aos="fade-left" className="flex items-center gap-x-2">
           <div className="p-3 inline-flex items-center justify-center rounded-xl bg-white text-primary border border-Neutral-100/30 shadow-[0px_6px_16px] shadow-black/6">
-            <BsBasket size={20} />
+            <MdOutlineMovieFilter size={20} />
           </div>
-          <h3 className="font-bold text-xl text-[#242424]">جدید ترین محصولات</h3>
+          <h3 className="font-bold text-xl text-[#242424]">تلوزیون</h3>
         </div>
         <div data-aos="fade-right" className="flex items-center gap-x-4">
           <button className="text-link p-3 rounded-xl border border-Neutral-100/30 shadow-[0px_6px_16px] shadow-black/6 cursor-pointer">
@@ -28,10 +29,10 @@ export default function LatestProductContainer() {
 
       {/* products container */}
       <div data-aos="fade-up" className="w-full flex items-center gap-x-4 mt-10">
-        <LatestProductTemplate />
-        <LatestProductTemplate />
-        <LatestProductTemplate />
-        <LatestProductTemplate />
+        <TVItem />
+        <TVItem />
+        <TVItem />
+        <TVItem />
       </div>
     </section>
   );

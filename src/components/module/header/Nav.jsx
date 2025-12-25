@@ -7,13 +7,16 @@ export default function NavHeader() {
     <div className="second-container flex items-center justify-between py-4 border-b border-Neutral-100/50">
       <div className="flex items-center gap-x-14">
         {/* category */}
-        <div className="text-Neutral-800 border border-Neutral-100 rounded-xl cursor-pointer p-2 flex items-center gap-x-2">
+        <div
+          data-aos="fade-left"
+          className="text-Neutral-800 border border-Neutral-100 rounded-xl cursor-pointer p-2 flex items-center gap-x-2"
+        >
           <IoMenuOutline />
           <span>دسته بندی محصول</span>
           <IoIosArrowUp className="-rotate-90" />
         </div>
         {/* nav */}
-        <div>
+        <div data-aos="fade-left">
           <nav
             className="flex items-center gap-x-4 text-sm text-Neutral-800 **:relative **:inline-block **:cursor-pointer
   **:before:content-[''] **:before:absolute **:before:right-1/2 **:before:-bottom-1
@@ -42,11 +45,11 @@ export default function NavHeader() {
         </div>
       </div>
       <div className="flex items-center gap-x-3">
-        <div className="flex flex-col **:cursor-pointer **:text-sm **:text-Neutral-800">
+        <div data-aos="fade-right" className="flex flex-col **:cursor-pointer **:text-sm **:text-Neutral-800">
           <span>۰۲۱-۲۵۶۷۸۹۳۴</span>
           <span>پشتیبانی ۲۴/۷</span>
         </div>
-        <div className="border border-Neutral-100 rounded-xl p-3 flex-center text-2xl">
+        <div data-aos="fade-right" className="border border-Neutral-100 rounded-xl p-3 flex-center text-2xl">
           <LiaPhoneVolumeSolid />
         </div>
       </div>
