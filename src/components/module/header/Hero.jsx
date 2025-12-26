@@ -1,15 +1,34 @@
-import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
 
 function HeroSection() {
   return (
-    <div
-      data-aos="fade-up"
+    <section
+      
       className="second-container w-full block my-4 mb-22"
     >
-      <div className="w-full bg-blue-600 rounded-2xl py-50 flex-center text-white text-2xl">
-        اسلایدر
-      </div>
-    </div>
+      <Swiper
+        modules={[Autoplay, Pagination]}
+        spaceBetween={50}
+        slidesPerView={1}
+        loop={true}
+        autoplay={{
+          delay: 3000, // هر ۳ ثانیه
+          disableOnInteraction: false, // بعد از کلیک کاربر متوقف نشه
+        }}
+        pagination={{
+          clickable: true,
+        }}
+      >
+        <SwiperSlide>
+          <img src="images/banner/slider1.png" className="w-full h-full rounded-xl" />
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <img src="images/banner/slider2.png" className="w-full h-full rounded-xl" />
+        </SwiperSlide>
+      </Swiper>
+    </section>
   );
 }
 

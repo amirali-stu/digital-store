@@ -1,37 +1,65 @@
 import { GoArrowLeft } from "react-icons/go";
 import AmazingDiscountProduct from "./AmazingDiscountProduct";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
 
 export default function AmazingDiscounts() {
   return (
     <section className="second-container w-full mb-40">
-      <div className="w-full rounded-4xl bg-blue-500 h-[420px] flex items-center p-4">
-        <div className="rounded-lg border-l-4 w-[240px] h-full border-l-white pl-4 flex flex-col justify-between">
+      <div className="w-full rounded-4xl bg-blue-500 lg:h-[420px] h-[480px] flex lg:items-center max-lg:flex-col p-4 overflow-x-hidden ">
+        <div className="rounded-lg lg:border-l-4 lg:w-[240px] w-full lg:h-full lg:border-l-white pl-4 flex lg:flex-col justify-between">
           <div
-            data-aos="fade-left"
-            className="rounded-2xl bg-white p-8 flex flex-col items-center gap-y-4"
+            
+            className="inline-flex max-lg:h-12 lg:rounded-2xl rounded-xl bg-white lg:p-8 p-2 lg:flex-col items-center lg:gap-y-4 gap-x-2"
           >
-            <div className="p-4 bg-blue-500 rounded-2xl">
-              <img
-                src="images/discount/image-sale.svg"
-                alt="discount product"
-              />
-            </div>
-            <h3 className="text-4xl font-bold max-w-[134px] text-center text-wrap text-blue-600">
+            <img
+              src="images/discount/image-sale.svg"
+              alt="discount product"
+              className="w-[68px] h-[68px] p-4 bg-blue-500 rounded-2xl max-lg:hidden"
+            />
+
+            <h3 className="lg:text-4xl text-lg lg:font-bold lg:max-w-[134px] text-center text-wrap text-blue-600">
               تخفیفات شگفت انگیر
             </h3>
           </div>
           <button
-            data-aos="fade-left"
-            className="bg-white rounded-3xl border border-Neutral-100/20 flex-center gap-x-2 p-3.5 cursor-pointer"
+            
+            className="bg-white max-lg:h-12 lg:rounded-3xl rounded-xl border border-Neutral-100/20 inline-flex items-center justify-center gap-x-2 lg:p-3.5 p-2 cursor-pointer"
           >
             <p>مشاهده همه</p> <GoArrowLeft />
           </button>
         </div>
-        <div data-aos="fade-up" className="w-full h-full flex items-center gap-x-4 mr-5">
-          <AmazingDiscountProduct />
-          <AmazingDiscountProduct />
-          <AmazingDiscountProduct />
-          <AmazingDiscountProduct />
+
+        <div className="w-full overflow-x-hidden">
+          <Swiper
+            slidesPerView="auto"
+            modules={[Autoplay]}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            loop={true}
+            className="!w-full !h-full lg:!mr-5 max-lg:!py-3"
+          >
+            <SwiperSlide className="!w-[280px]">
+              <AmazingDiscountProduct />
+            </SwiperSlide>
+            <SwiperSlide className="!w-[280px]">
+              <AmazingDiscountProduct />
+            </SwiperSlide>
+            <SwiperSlide className="!w-[280px]">
+              <AmazingDiscountProduct />
+            </SwiperSlide>
+            <SwiperSlide className="!w-[280px]">
+              <AmazingDiscountProduct />
+            </SwiperSlide>
+            <SwiperSlide className="!w-[280px]">
+              <AmazingDiscountProduct />
+            </SwiperSlide>
+            <SwiperSlide className="!w-[280px]">
+              <AmazingDiscountProduct />
+            </SwiperSlide>
+            <SwiperSlide className="!w-[280px]">
+              <AmazingDiscountProduct />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
     </section>

@@ -69,10 +69,10 @@
 
 @layer components {
   .container {
-    @apply max-w-full flex flex-col items-center;
+    @apply max-w-full flex flex-col;
   }
   .second-container {
-    @apply !px-10;
+    @apply xl:!px-10 !px-4;
   }
   .flex-center {
     @apply flex items-center justify-center;
@@ -91,4 +91,35 @@ body {
 .social-media_contact-us {
   border-radius: 0% 0% 51% 52% / 5% 1% 42% 43%;
   corner-shape: bevel bevel round round;
+}
+
+.swiper {
+  position: relative;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: -5px !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+
+  background-color: #ffff;
+  padding: 6px 12px;
+
+  width: 88px !important;
+  height: 40px;
+
+  border-radius: 999px 999px 0 0;
+}
+
+.swiper-pagination-bullet {
+  background-color: #d6d6d6;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease-in;
+}
+
+.swiper-pagination-bullet-active {
+  width: 20px;
+  border-radius: 5px;
 }

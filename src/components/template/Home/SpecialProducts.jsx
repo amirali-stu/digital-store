@@ -6,13 +6,13 @@ export default function SpecialProducts() {
     <section className="mb-40 second-container w-full">
       {/* header */}
       <div className="w-full flex items-center justify-between">
-        <div data-aos="fade-left" className="flex items-center gap-x-2">
+        <div className="flex items-center gap-x-2">
           <div className="p-3 inline-flex items-center justify-center rounded-xl bg-white text-primary border border-Neutral-100/30 shadow-[0px_6px_16px] shadow-black/6">
             <MdOutlineMovieFilter size={20} />
           </div>
           <h3 className="font-bold text-xl text-[#242424]">محصولات ویژه</h3>
         </div>
-        <div data-aos="fade-right" className="flex items-center gap-x-4">
+        <div  className="flex items-center gap-x-4">
           <button className="text-link p-3 rounded-xl border border-Neutral-100/30 shadow-[0px_6px_16px] shadow-black/6 cursor-pointer">
             مشاهده همه
           </button>
@@ -21,8 +21,8 @@ export default function SpecialProducts() {
 
       {/* products container */}
       <div
-        data-aos="fade-up"
-        className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mt-10"
+        
+        className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 mt-10"
       >
         <SpecialProductsTemplate />
         <SpecialProductsTemplate />

@@ -1,0 +1,15 @@
+document.addEventListener('DOMContentLoaded', function () {
+    var popup = document.querySelector('.popup');
+    if (popup) {
+        popup.classList.add('is-visible');
+
+        var closeBtn = document.createElement('span');
+        closeBtn.classList.add('popup-close');
+        closeBtn.innerHTML = '&times;';
+        popup.appendChild(closeBtn);
+
+        closeBtn.addEventListener('click', function () {
+            popup.classList.remove('is-visible');
+        });
+    }
+});

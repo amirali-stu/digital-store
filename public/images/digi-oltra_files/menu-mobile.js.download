@@ -1,0 +1,301 @@
+// const list = document.querySelectorAll('.list');
+// function activeLink() {
+//   list.forEach((item)=>
+//   item.classList.remove('active'));
+//   this.classList.add('active');
+// }
+
+// list.forEach((item)=>
+//   item.addEventListener('click',activeLink));
+
+
+$(document).ready (function(){
+  $('.floatting-btn i').click( function() {
+    $('.contact-list').slideToggle();
+    if($(this).hasClass('fa-comment-dots')) {
+      $(this).removeClass('fa-comment-dots').addClass('fa-multiply'); 
+      $(this).css({
+        'transform' : 'rotate(180deg)',
+      })
+    }
+    else {
+      $(this).removeClass('fa-multiply').addClass('fa-comment-dots'); 
+      $(this).css({
+        'transform' : 'rotate(0deg)',
+      })
+    }
+  })
+})
+
+
+
+// گرفتن تمامی آیتم‌های منو
+const list = document.querySelectorAll('.list');
+
+// تابع برای تنظیم کلاس active بر اساس URL فعلی
+function setActiveBasedOnURL() {
+  const currentURL = window.location.href.replace(/\/$/, ""); // حذف اسلش انتهایی از URL فعلی
+  
+  let isActiveSet = false; // برای اطمینان از اینکه یک آیتم کلاس active می‌گیرد
+
+  list.forEach((item) => {
+	const linkElement = item.querySelector('a');
+    const link = linkElement?.href?.replace(/\/$/, ""); // حذف اسلش انتهایی از لینک
+
+    // شرط برای صفحه فروشگاه
+    if (currentURL.includes("/shop")) {
+      if (linkElement.id === "filter-ultra") {
+        item.classList.add('active'); // گزینه فیلتر را فعال می‌کند
+        isActiveSet = true;
+      } else if (linkElement.id === "shop") {
+        item.classList.add('active'); // گزینه فروشگاه را فعال می‌کند
+        isActiveSet = true;
+      } else {
+        item.classList.remove('active'); // حذف active از بقیه آیتم‌ها
+      }
+    }
+	  // شرط برای صفحه فروشگاه
+    else if (currentURL.includes("/product-category")) {
+      if (linkElement.id === "filter-ultra") {
+        item.classList.add('active'); // گزینه فیلتر را فعال می‌کند
+        isActiveSet = true;
+      } else if (linkElement.id === "shop") {
+        item.classList.add('active'); // گزینه فروشگاه را فعال می‌کند
+        isActiveSet = true;
+      } else {
+        item.classList.remove('active'); // حذف active از بقیه آیتم‌ها
+      }
+    }
+    // شرط برای صفحه حساب کاربری و زیرمجموعه‌های آن
+    else if (currentURL.includes("/my-account") && linkElement.id === "user") {
+      item.classList.add('active');
+      isActiveSet = true;
+    }
+    // شرط برای سایر لینک‌های منو
+    else if (currentURL === link) {
+      item.classList.add('active');
+      isActiveSet = true;
+    } else {
+      item.classList.remove('active');
+    }
+  });
+
+  // اگر هیچ آیتمی کلاس active نداشت، گزینه خانه را فعال کن
+  if (!isActiveSet) {
+    const homeItem = document.querySelector('#home');
+    if (homeItem) {
+      homeItem.parentElement.classList.add('active');
+    }
+  }
+}
+
+// اجرای تابع هنگام بارگذاری صفحه
+setActiveBasedOnURL();
+
+// اضافه کردن رویداد کلیک برای تنظیم کلاس active
+list.forEach((item) => {
+  item.addEventListener('click', function () {
+    list.forEach((el) => el.classList.remove('active')); // حذف active از تمام آیتم‌ها
+    this.classList.add('active'); // افزودن active به آیتم کلیک‌شده
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+const trigger= document.querySelectorAll('nav li');
+trigger.forEach((menu)=> menu.addEventListener('click',toggle));
+
+function toggle () {
+    trigger.forEach((item)=> item !=this ? item.classList.remove('active') : null);
+    if (this.classList != 'active') {
+        this.classList.toggle('active');
+    }
+}
+
+
+
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
+/***********timer Amazing***********/
+document.addEventListener('DOMContentLoaded', function () {
+    const countdownElements = document.querySelectorAll('.box-timer');
+
+    countdownElements.forEach(function (countdownElement) {
+        const daysEl = countdownElement.querySelector('.days-value');
+        const hoursEl = countdownElement.querySelector('.hours-value');
+        const minutesEl = countdownElement.querySelector('.minutes-value');
+        const secondsEl = countdownElement.querySelector('.seconds-value');
+        const selector = countdownElement.dataset.targetSelector;
+        const target = countdownElement.querySelector(selector);
+
+        const targetDate = new Date(
+            parseInt(countdownElement.dataset.targetYear),
+            parseInt(countdownElement.dataset.targetMonth) - 1,
+            parseInt(countdownElement.dataset.targetDay),
+            parseInt(countdownElement.dataset.targetHour),
+            parseInt(countdownElement.dataset.targetMinute),
+            parseInt(countdownElement.dataset.targetSecond)
+        );
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const timeRemaining = targetDate - now;
+
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            daysEl.textContent = days;
+            hoursEl.textContent = hours;
+            minutesEl.textContent = minutes;
+            secondsEl.textContent = seconds;
+
+            // ✅ اینجا کلاس expired رو اضافه کن
+            if (days === 0 && hours === 0) {
+                if (target && !target.classList.contains('expired')) {
+                    target.classList.add('expired');
+                    console.log('✅ کلاس expired اضافه شد به', target);
+                }
+            }
+
+            if (timeRemaining > 0) {
+                setTimeout(updateTimer, 1000);
+            }
+        }
+
+        updateTimer();
+    });
+});
+
+/************quantity number plus and minus************/
+$(document).on( 'click', 'button.plus, button.minus', function() {
+  var qty = $( this ).parent( '.quantity' ).find( '.input-text' );
+  var val = parseFloat(qty.val());
+  var max = parseFloat(qty.attr( 'max' ));
+  var min = parseFloat(qty.attr( 'min' ));
+  var step = parseFloat(qty.attr( 'step' ));
+  if ( $( this ).is( '.plus' ) ) {
+      if ( max && ( max <= val ) ) {
+          qty.val( max ).change();
+      } else {
+          qty.val( val + step ).change();
+      }
+  } else {
+      if ( min && ( min >= val ) ) {
+          qty.val( min ).change();
+      } else if ( val > 1 ) {
+          qty.val( val - step ).change();
+      }
+  }
+});
+
+
+$(document).ready(function () {
+  var ultra_modal_share = document.getElementById("ultra-modal");
+  var share_modal_btn = document.getElementById("btn_modal_video");
+  var close_share_modal = document.querySelector(".close_video_modal");
+
+  // بررسی هرکدام به صورت جداگانه و اضافه کردن ایمن رویدادها
+  if (share_modal_btn && ultra_modal_share) {
+    share_modal_btn.addEventListener("click", function () {
+      ultra_modal_share.style.display = "block";
+    });
+  }
+
+  if (close_share_modal && ultra_modal_share) {
+    close_share_modal.addEventListener("click", function () {
+      ultra_modal_share.style.display = "none";
+    });
+  }
+
+  if (ultra_modal_share) {
+    window.addEventListener("click", function (event) {
+      if (event.target === ultra_modal_share) {
+        ultra_modal_share.style.display = "none";
+      }
+    });
+  }
+});
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const prodShare = document.getElementById("prod-share");
+  const overlayProd = document.getElementById("overlay-prod");
+  const modalProdShare = document.getElementById("modal-prod-share");
+  const closeBtnProdShare = document.getElementById("close-btn-prod-share");
+
+  // بررسی وجود المان‌ها قبل از افزودن Event Listener
+  if (prodShare && overlayProd && modalProdShare && closeBtnProdShare) {
+    prodShare.addEventListener("click", function () {
+      overlayProd.classList.add("is-visible");
+      modalProdShare.classList.add("is-visible");
+    });
+
+    closeBtnProdShare.addEventListener("click", function () {
+      overlayProd.classList.remove("is-visible");
+      modalProdShare.classList.remove("is-visible");
+    });
+
+    overlayProd.addEventListener("click", function () {
+      overlayProd.classList.remove("is-visible");
+      modalProdShare.classList.remove("is-visible");
+    });
+  } else {
+    console.warn("Some elements are missing from the DOM. Event listeners were not added.");
+  }
+});
+
+
+
+
+
+
+
+
+
+//Script for panel mobile menu
+  function myFunctionpanelx() {
+    var panelx = document.getElementById("ultra-panel-menu");
+    if (panelx.style.display === "block") {
+      panelx.style.display = "none";
+    } else {
+      panelx.style.display = "block";
+    }
+  }
+
+  
+  
+
+
+
+

@@ -1,0 +1,98 @@
+
+/**
+ * Switch Form Login
+ */
+$('.message a').click(function(){
+    $('.form-login-ultra form').animate({height: "toggle", opacity: "toggle"}, "slow");
+});
+$(document).click(function (e) {
+    $('.content-ajax-search').removeClass('show');
+    $('.loader-ajax-search').removeClass('show');
+
+    if (!$(e.target).closest('.search-main').length) {
+        $('.overlay').removeClass('show');
+    }
+});
+$("a.product_type_simple").click(function () {
+    $('#modal_add_to_cart').delay(500).fadeIn();
+    $('#modal_add_to_cart').delay(600).fadeOut();
+});
+jQuery(document).ready(function($) {
+    // وقتی دکمه "افزودن به سبد خرید" کلیک میشود
+    $("button.single_add_to_cart_button").on('click', function (e) {
+        var $button = $(this);
+
+        // نمایش پاپ آپ پس از 500 میلی ثانیه
+        $('#modal_display_cart').delay(500).fadeIn();
+
+        // وقتی پاپ آپ بسته میشود
+        $('.close-modal').click(function() {
+            $('#modal_display_cart').fadeOut();
+        });
+
+        // محصول به سبد خرید اضافه میشود، اجازه میدهیم فرم ارسال شود
+        return true;  // یا از e.preventDefault() استفاده نکنید تا فرم ارسال شود و محصول اضافه شود
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (
+    document.body.classList.contains("single-product") && 
+    document.querySelector(".cart-side-ultra")
+  ) {
+    document.body.classList.add("has-cart");
+  }
+});
+
+
+
+jQuery(document).ready(function($) {
+    $('#copyButton').on('click', function() {
+        var copyText = $('#shortlink');
+        copyText.select();
+        document.execCommand('copy');
+
+        // نمایش پیام به کاربر
+        alert('لینک کوتاه کپی شد!');
+    });
+});
+
+jQuery(document).ready(function () {
+    jQuery('.search-btn-menu-mobile').click(function () {
+        jQuery('.search-mobile').slideDown(50);
+        jQuery('.search-mobile .search-input').focus();
+    });
+    jQuery('.close_search').click(function () {
+        jQuery('.search-mobile').slideUp(50);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    var popup = document.querySelector('.popup');
+    if (popup) {
+        popup.classList.add('is-visible');
+
+        var closeBtn = document.createElement('span');
+        closeBtn.classList.add('popup-close');
+        closeBtn.innerHTML = '&times;';
+        popup.appendChild(closeBtn);
+
+        closeBtn.addEventListener('click', function () {
+            popup.classList.remove('is-visible');
+        });
+    }
+});
+/**
+ * Search Header
+ */
+jQuery(function (search) {
+    search('#searchbtn').click(function () {
+        search('#headersearch').show(500);
+        search('#headersearch input').focus();
+    });
+    search('.searchclose').click(function () {
+        search('#headersearch').hide(500);
+    });
+});
+
+

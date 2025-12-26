@@ -6,7 +6,7 @@ function LatestProductTemplate() {
     // اگر تماس بگیرید یا بدون تخفیف فعال بود، باید border primary بگیرد
     // اگر تخفیف فعال بود border-b error-600
 
-    <div className="w-[288px] h-[430px] rounded-xl transition-all border-b-0 hover:border-b-6 border-b-primary bg-white border border-Neutral-100/30 p-4 shadow-[0px_8px_16px] shadow-black/10">
+    <div className="w-[288px] h-[430px] rounded-xl transition-all border-b-0 hover:border-b-6 border-b-primary bg-white border border-Neutral-100/30 p-4 shadow-[0px_8px_16px] shadow-black/5">
       <img src="images/product/phone.jpeg" alt="products image" />
       <h4 className="text-sm text-Neutral-800 text-wrap line-clamp-2">
         گوشی موبایل اپل مدل iPhone 16 Pro Max ZAA
