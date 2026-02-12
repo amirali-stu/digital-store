@@ -3,29 +3,33 @@ import { Autoplay, Pagination } from "swiper/modules";
 
 function HeroSection() {
   return (
-    <section
-      
-      className="second-container w-full block my-4 mb-22"
-    >
+    <section className="second-container w-full block my-4 mb-22">
       <Swiper
         modules={[Autoplay, Pagination]}
         spaceBetween={50}
         slidesPerView={1}
         loop={true}
         autoplay={{
-          delay: 3000, // هر ۳ ثانیه
+          delay: 10000, // هر ۳ ثانیه
           disableOnInteraction: false, // بعد از کلیک کاربر متوقف نشه
         }}
         pagination={{
           clickable: true,
         }}
+        className="lg:inverted-radius"
       >
         <SwiperSlide>
-          <img src="images/banner/slider1.png" className="w-full h-full rounded-xl" />
+          <img
+            src="images/banner/slider1.png"
+            className="w-full h-full rounded-xl"
+          />
         </SwiperSlide>
 
         <SwiperSlide>
-          <img src="images/banner/slider2.png" className="w-full h-full rounded-xl" />
+          <img
+            src="images/banner/slider2.png"
+            className="w-full h-full rounded-xl"
+          />
         </SwiperSlide>
       </Swiper>
     </section>

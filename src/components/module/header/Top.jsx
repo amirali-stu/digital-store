@@ -3,10 +3,12 @@ import { TbShoppingCart } from "react-icons/tb";
 import { LuLogIn } from "react-icons/lu";
 import { useState } from "react";
 import { LuSearch } from "react-icons/lu";
-import { IoMenu } from "react-icons/io5";
+import { IoMenu, IoClose } from "react-icons/io5";
+import { MdKeyboardArrowLeft } from "react-icons/md";
 
 export default function TopHeader() {
   const [focusOnSearchInput, setFocusOnSearchInput] = useState(false);
+  const [sidebarActive, setSidebarActive] = useState(false);
 
   return (
     <div className="second-container">
@@ -38,13 +40,10 @@ export default function TopHeader() {
           </div>
         </div>
         <div className="flex items-center gap-x-4">
-          <div
-            
-            className="p-2 border border-Neutral-100 text-blue-400 flex-center rounded-xl text-xl"
-          >
+          <div className="p-2 border border-Neutral-100 text-blue-400 flex-center rounded-xl text-xl">
             <TbShoppingCart />
           </div>
-          <a  href="#">
+          <a href="#">
             <div className="py-2 px-4 border cursor-pointer rounded-xl border-Neutral-100 text-Neutral-800 flex-center gap-x-2">
               <span>ورود / ثبت نام</span>
               <LuLogIn className="rotate-180" />
@@ -52,13 +51,51 @@ export default function TopHeader() {
           </a>
         </div>
       </div>
-      <div className="flex items-center justify-between py-2 **:text-secondary md:hidden">
-        <IoMenu size={20}/>
+      <div className="flex items-center justify-between py-2 md:hidden">
+        <IoMenu
+          size={20}
+          className="text-secondary"
+          onClick={() => setSidebarActive(!sidebarActive)}
+        />
         <div className="flex items-center gap-x-2">
-          <img src="images/phone-icon.svg" className="w-4 rounded-xs bg-secondary"  />
+          <img
+            src="images/phone-icon.svg"
+            className="w-4 rounded-xs bg-secondary"
+          />
           <h2 className="text-lg">اولترا مارکت</h2>
         </div>
-        <LuSearch size={20}/>
+        <LuSearch size={20} className="text-secondary" />
+
+        <div
+          className={`fixed top-0 right-0 h-screen w-80 shadow-[0px_5px_10px] shadow-black bg-white z-40
+  transform transition-transform duration-300 ease-in-out p-4
+  ${sidebarActive ? "translate-x-0" : "translate-x-full"}`}
+        >
+          <div className="w-full flex item-content justify-between **:text-secondary">
+            <div>
+              <h3 className="text-2xl">دیجی اولترا</h3>
+            </div>
+            <IoClose size={22} />
+          </div>
+
+          <ul className="w-full flex flex-col gap-y-4 mt-8">
+            <li className="overflow-hidden">
+              <div className="p-3 flex item-content justify-between w-full border-2 border-Neutral-50 rounded-lg text-Neutral-800">
+                <p>لوازم جانبی</p>
+                <MdKeyboardArrowLeft />
+              </div>
+
+              <div>d</div>
+            </li>
+            <li className="p-3 flex item-content justify-between w-full border-2 border-Neutral-50 rounded-lg text-Neutral-800">
+              <p>لوازم جانبی</p>
+              <MdKeyboardArrowLeft />
+            </li>
+            <li className="p-3 flex item-content justify-between w-full border-2 border-Neutral-50 rounded-lg text-Neutral-800">
+              <p>ساعت هوشمند</p>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
