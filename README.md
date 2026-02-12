@@ -1,16 +1,49 @@
-# React + Vite
+# 🛍️ فروشگاه دیجیتال — پروژه React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+یک فروشگاه تک‌صفحه‌ای (SPA) مدرن برای نمایش و فروش محصولات دیجیتالی که با استفاده از **React** و **TailwindCSS** توسعه داده شده است. این پروژه با تمرکز بر رابط کاربری سریع، طراحی ریسپانسیو و تجربه کاربری روان ساخته شده و مناسب استفاده به‌عنوان نمونه‌کار یا پایه‌ی توسعه فروشگاه‌های آنلاین دیجیتال است.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 ویژگی‌ها
 
-## React Compiler
+* طراحی کاملاً ریسپانسیو برای موبایل، تبلت و دسکتاپ
+* معماری کامپوننت‌محور با React
+* استایل‌دهی سریع و مدرن با TailwindCSS
+* بارگذاری سریع صفحات بدون رفرش (SPA)
+* ساختار مرتب و قابل توسعه برای افزودن امکانات جدید
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ تکنولوژی‌های استفاده‌شده
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React
+* Vite
+* TailwindCSS
+* JavaScript (ES6+)
+
+---
+
+## 🌐 مشاهده نسخه آنلاین
+
+🔗 **دموی آنلاین:** *(لینک دمو پروژه را اینجا قرار دهید)*
+
+---
+
+## 📦 نصب و اجرا
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+## 📌 هدف پروژه
+
+این پروژه با هدف تمرین و نمایش مهارت‌های فرانت‌اند، پیاده‌سازی رابط فروشگاه دیجیتال و کار با تکنولوژی‌های مدرن جاوااسکریپت ساخته شده است.
+
+---
+
+## 📄 لایسنس
+
+این پروژه صرفاً جهت نمونه‌کار و اهداف آموزشی منتشر شده است.
