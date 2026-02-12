@@ -25,7 +25,7 @@
 
 ## 🌐 مشاهده نسخه آنلاین
 
-🔗 **دموی آنلاین:** [**](https://digitalshope.netlify.app/)
+🔗 **دموی آنلاین:**  [digitalshope](https://digitalshope.netlify.app/)
 
 ---
 
